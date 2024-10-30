@@ -3,8 +3,6 @@ SAM Documentation
 
 Welcome to the documentation for the SAM project. Below are the main sections:
 
-Welcome to the documentation for the SAM project. Below are the main sections:
-
 .. toctree::
    :maxdepth: 2
    :caption: Contents
