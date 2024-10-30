@@ -20,7 +20,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r sam/requirements.txt
           pip install -e sam/
-          pip install sphinx sphinx_rtd_theme myst_parser sphinx-autodoc-typehints
+          pip install sphinx sphinx_rtd_theme myst_parser sphinx-autodoc-typehints sphinx_material
       - name: Sphinx build
         run: |
           sphinx-build . _build
