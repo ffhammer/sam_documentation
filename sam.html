@@ -125,6 +125,23 @@
 
       </div>
       
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/mockaWolke/sam" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    SAM Repository
+  </div>
+</a>
+          </div>
+        </div>
+      
       
   
   <script src="_static/javascripts/version_dropdown.js"></script>
@@ -168,6 +185,21 @@
     <a href="index.html"
        title="SAM 30.10.2024 documentation">SAM 30.10.2024 documentation</a>
   </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/mockaWolke/sam" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    SAM Repository
+  </div>
+</a>
+    </div>
+  
   
 
 </nav>
@@ -197,27 +229,11 @@
         </li>
         <li class="md-nav__item"><a href="#sam.SAM_Settings.cancel_system_stress" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SAM_Settings.cancel_system_stress</span></code></a>
         </li>
-        <li class="md-nav__item"><a href="#sam.SAM_Settings.transform" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SAM_Settings.transform</span></code></a>
+        <li class="md-nav__item"><a href="#sam.SAM_Settings.transform" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SAM_Settings.transform()</span></code></a>
         </li>
-        <li class="md-nav__item"><a href="#sam.SAM_Settings.stress_to_survival" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SAM_Settings.stress_to_survival</span></code></a>
+        <li class="md-nav__item"><a href="#sam.SAM_Settings.stress_to_survival" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SAM_Settings.stress_to_survival()</span></code></a>
         </li>
-        <li class="md-nav__item"><a href="#sam.SAM_Settings.survival_to_stress" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SAM_Settings.survival_to_stress</span></code></a>
-        </li>
-        <li class="md-nav__item"><a href="#id0" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SAM_Settings.param_d_norm</span></code></a>
-        </li>
-        <li class="md-nav__item"><a href="#id1" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SAM_Settings.stress_form</span></code></a>
-        </li>
-        <li class="md-nav__item"><a href="#id2" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SAM_Settings.stress_intercept_in_survival</span></code></a>
-        </li>
-        <li class="md-nav__item"><a href="#id3" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SAM_Settings.max_control_survival</span></code></a>
-        </li>
-        <li class="md-nav__item"><a href="#id4" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SAM_Settings.cancel_system_stress</span></code></a>
-        </li>
-        <li class="md-nav__item"><a href="#id5" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SAM_Settings.transform()</span></code></a>
-        </li>
-        <li class="md-nav__item"><a href="#id6" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SAM_Settings.stress_to_survival()</span></code></a>
-        </li>
-        <li class="md-nav__item"><a href="#id7" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SAM_Settings.survival_to_stress()</span></code></a>
+        <li class="md-nav__item"><a href="#sam.SAM_Settings.survival_to_stress" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SAM_Settings.survival_to_stress()</span></code></a>
         </li></ul>
             </nav>
         </li></ul>
@@ -256,128 +272,48 @@
 <p>Settings for configuring the SAM (Stress Addition Model) used in dose-response predictions.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sam.SAM_Settings.param_d_norm">
-<span class="sig-name descname"><span class="pre">param_d_norm</span></span><a class="headerlink" href="#sam.SAM_Settings.param_d_norm" title="Link to this definition">¶</a></dt>
-<dd><p>If <cite>True</cite>, normalizes survival values based on environmental stress.
-This can be useful when interpreting control curves with significant hormesis.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
+<span class="sig-name descname"><span class="pre">param_d_norm</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#sam.SAM_Settings.param_d_norm" title="Link to this definition">¶</a></dt>
+<dd><p>If <cite>True</cite>, normalizes survival values based on environmental stress.</p>
 </dd></dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sam.SAM_Settings.stress_form">
-<span class="sig-name descname"><span class="pre">stress_form</span></span><a class="headerlink" href="#sam.SAM_Settings.stress_form" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">stress_form</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'div'</span></em><a class="headerlink" href="#sam.SAM_Settings.stress_form" title="Link to this definition">¶</a></dt>
 <dd><p>Defines the formula used to calculate environmental stress. Supported options:
-- <cite>“div”</cite>: Divides stressor by control, resulting in <cite>additional_stress = stressor / control</cite>.
-- <cite>“subtract”</cite>: Subtracts control stress from stressor, as in <cite>additional_stress = 1 - (control - stressor)</cite>.
-- <cite>“only_stress”</cite>: Computes only the stressor as <cite>additional_stress = 1 - stressor</cite>.
+- <cite>“div”</cite>: <cite>additional_stress = stressor / control</cite>
+- <cite>“subtract”</cite>: <cite>additional_stress = 1 - (control - stressor)</cite>
+- <cite>“only_stress”</cite>: <cite>additional_stress = 1 - stressor</cite>
 - <cite>“stress_sub”</cite>: Subtracts transformed control stress from transformed stressor stress.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
 </dd></dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sam.SAM_Settings.stress_intercept_in_survival">
-<span class="sig-name descname"><span class="pre">stress_intercept_in_survival</span></span><a class="headerlink" href="#sam.SAM_Settings.stress_intercept_in_survival" title="Link to this definition">¶</a></dt>
-<dd><p>Adds a constant factor to <cite>additional_stress</cite> for modifying
-survival predictions. Default is <cite>1</cite>, which assumes no added intercept.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
+<span class="sig-name descname"><span class="pre">stress_intercept_in_survival</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#sam.SAM_Settings.stress_intercept_in_survival" title="Link to this definition">¶</a></dt>
+<dd><p>Adds a constant factor to <cite>additional_stress</cite> for modifying survival predictions (default is <cite>1</cite>).</p>
 </dd></dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sam.SAM_Settings.max_control_survival">
-<span class="sig-name descname"><span class="pre">max_control_survival</span></span><a class="headerlink" href="#sam.SAM_Settings.max_control_survival" title="Link to this definition">¶</a></dt>
-<dd><p>Upper bound on survival for control samples. Defaults to <cite>1</cite> (100% survival).
-This limits control survival, which can be useful for dealing with steep dose-response curves
-around 1 (100%) and 0 (0%).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
+<span class="sig-name descname"><span class="pre">max_control_survival</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#sam.SAM_Settings.max_control_survival" title="Link to this definition">¶</a></dt>
+<dd><p>Upper bound on survival for control samples, useful for steep dose-response curves (default is <cite>1</cite>).</p>
 </dd></dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sam.SAM_Settings.cancel_system_stress">
-<span class="sig-name descname"><span class="pre">cancel_system_stress</span></span><a class="headerlink" href="#sam.SAM_Settings.cancel_system_stress" title="Link to this definition">¶</a></dt>
-<dd><p>If <cite>True</cite>, estimates system stress based on control curves and removes
-it from the predictions. Helps handle hormetic (overly adaptive) control responses, improving model accuracy.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
+<span class="sig-name descname"><span class="pre">cancel_system_stress</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#sam.SAM_Settings.cancel_system_stress" title="Link to this definition">¶</a></dt>
+<dd><p>If <cite>True</cite>, estimates system stress based on control curves and removes it from predictions.</p>
 </dd></dl>
-<dl class="py attribute">
+<dl class="py method">
 <dt class="sig sig-object py" id="sam.SAM_Settings.transform">
-<span class="sig-name descname"><span class="pre">transform</span></span><a class="headerlink" href="#sam.SAM_Settings.transform" title="Link to this definition">¶</a></dt>
-<dd><p>Transformation function applied to regression data prior to model fitting.
-See <cite>DRF_Settings</cite> for additional details on transformations. Default is <cite>williams_and_linear_interpolation</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Transforms</p>
-</dd>
-</dl>
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">surv</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sam.SAM_Settings.transform" title="Link to this definition">¶</a></dt>
+<dd><p>Transformation function applied to regression data prior to model fitting.</p>
 </dd></dl>
-<dl class="py attribute">
+<dl class="py method">
 <dt class="sig sig-object py" id="sam.SAM_Settings.stress_to_survival">
-<span class="sig-name descname"><span class="pre">stress_to_survival</span></span><a class="headerlink" href="#sam.SAM_Settings.stress_to_survival" title="Link to this definition">¶</a></dt>
-<dd><p>Mapping function from stress values to survival values. Defaults to
-a lambda function applying <cite>stress_to_survival(x, 3.2, 3.2)</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Callable</p>
-</dd>
-</dl>
+<span class="sig-name descname"><span class="pre">stress_to_survival</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sam.SAM_Settings.stress_to_survival" title="Link to this definition">¶</a></dt>
+<dd><p>Mapping function from stress values to survival values, defaulting to <cite>stress_to_survival(x, 3.2, 3.2)</cite>.</p>
 </dd></dl>
-<dl class="py attribute">
+<dl class="py method">
 <dt class="sig sig-object py" id="sam.SAM_Settings.survival_to_stress">
-<span class="sig-name descname"><span class="pre">survival_to_stress</span></span><a class="headerlink" href="#sam.SAM_Settings.survival_to_stress" title="Link to this definition">¶</a></dt>
-<dd><p>Mapping function from survival values to stress values, defaulting to
-a lambda function using <cite>survival_to_stress(x, 3.2, 3.2)</cite></p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Callable</p>
-</dd>
-</dl>
+<span class="sig-name descname"><span class="pre">survival_to_stress</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sam.SAM_Settings.survival_to_stress" title="Link to this definition">¶</a></dt>
+<dd><p>Mapping function from survival values to stress values, defaulting to <cite>survival_to_stress(x, 3.2, 3.2)</cite>.</p>
 </dd></dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="id0">
-<span class="sig-name descname"><span class="pre">param_d_norm</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="id1">
-<span class="sig-name descname"><span class="pre">stress_form</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'div'</span></em><a class="headerlink" href="#id1" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="id2">
-<span class="sig-name descname"><span class="pre">stress_intercept_in_survival</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id2" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="id3">
-<span class="sig-name descname"><span class="pre">max_control_survival</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#id3" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="id4">
-<span class="sig-name descname"><span class="pre">cancel_system_stress</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#id4" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="id5">
-<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">surv</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id5" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="id6">
-<span class="sig-name descname"><span class="pre">stress_to_survival</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id6" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="id7">
-<span class="sig-name descname"><span class="pre">survival_to_stress</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id7" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
 </dd></dl>
 </section>
 <section id="sam-prediction">
