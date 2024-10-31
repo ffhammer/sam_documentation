@@ -30,3 +30,8 @@ exclude_patterns = [
 html_theme = 'sphinx_material' 
 html_static_path = ['_static']
 autodoc_member_order = 'bysource'
+
+html_theme_options = {
+    "repo_url": "https://github.com/mockaWolke/sam",
+    "repo_name": "SAM Repository",
+}
