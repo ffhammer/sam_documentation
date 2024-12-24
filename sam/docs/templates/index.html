@@ -273,7 +273,7 @@ This visualization shows “cleaned” dose-response curves, where system-inhere
 <p>The following is a list of individual experiments conducted, each with detailed data and SAM model predictions:</p>
 <p>{% for experiment in experiments %}</p>
 <ul class="simple">
-<li><p>[{{ experiment }}](experiments/{{ experiment }})
+<li><p>[{{ experiment.nicer_name }}](experiments/{{ experiment.experiment_link }})
 {% endfor %}</p></li>
 </ul>
 </section>
