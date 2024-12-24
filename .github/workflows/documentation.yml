@@ -11,9 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-      - name: Clone Sam
+      - name: Clone Sam and extract example.py
         run: |
           git clone https://github.com/MockaWolke/sam.git
+          cp sam/examples/example.py .
 
       - name: Install dependencies
         run: |
