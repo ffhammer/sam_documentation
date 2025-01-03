@@ -10,10 +10,15 @@ SAM Settings
    :undoc-members:
    :show-inheritance:
 
-SAM Prediction
+Generate SAM Prediction
 --------------
 
-.. autofunction:: sam.sam_prediction
+.. autofunction:: sam.generate_sam_prediction
 
 
+SAM Prediction
+------------
 
+.. autoclass:: sam.SAMPrediction
+   :members:
+   :undoc-members:

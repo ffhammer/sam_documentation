@@ -54,7 +54,7 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Dose-Response Fitting" href="DoseResponseFits.html" />
+    <link rel="next" title="Stress Addition Model (SAM)" href="sam.html" />
     <link rel="prev" title="SAM Documentation" href="index.html" />
   
    
@@ -215,15 +215,25 @@
   <ul class="md-nav__list" data-md-scrollfix="">
         <li class="md-nav__item"><a href="#datahandling--page-root" class="md-nav__link">Data Handling</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#sam.DoseResponseSeries" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DoseResponseSeries</span></code></a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#sam.CauseEffectData" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CauseEffectData</span></code></a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#sam.DoseResponseSeries.concentration" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DoseResponseSeries.concentration</span></code></a>
+        <li class="md-nav__item"><a href="#sam.CauseEffectData.concentration" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CauseEffectData.concentration</span></code></a>
         </li>
-        <li class="md-nav__item"><a href="#sam.DoseResponseSeries.survival_rate" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DoseResponseSeries.survival_rate</span></code></a>
+        <li class="md-nav__item"><a href="#sam.CauseEffectData.survival_rate" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CauseEffectData.survival_rate</span></code></a>
         </li>
-        <li class="md-nav__item"><a href="#sam.DoseResponseSeries.name" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DoseResponseSeries.name</span></code></a>
+        <li class="md-nav__item"><a href="#sam.CauseEffectData.name" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CauseEffectData.name</span></code></a>
         </li>
-        <li class="md-nav__item"><a href="#sam.DoseResponseSeries.meta" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DoseResponseSeries.meta</span></code></a>
+        <li class="md-nav__item"><a href="#sam.CauseEffectData.meta" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CauseEffectData.meta</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#sam.CauseEffectData.from_dict" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CauseEffectData.from_dict()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#sam.CauseEffectData.from_json" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CauseEffectData.from_json()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#sam.CauseEffectData.schema" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CauseEffectData.schema()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#sam.CauseEffectData.to_dict" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CauseEffectData.to_dict()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#sam.CauseEffectData.to_json" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CauseEffectData.to_json()</span></code></a>
         </li></ul>
             </nav>
         </li>
@@ -269,12 +279,12 @@
             
   <section id="data-handling">
 <h1 id="datahandling--page-root">Data Handling<a class="headerlink" href="#datahandling--page-root" title="Link to this heading">¶</a></h1>
-<p>For trying out your own data quickly, it’s best to use the <a class="reference internal" href="#sam.DoseResponseSeries" title="sam.DoseResponseSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">sam.DoseResponseSeries</span></code></a> class, as it is easy and quick.</p>
+<p>For trying out your own data quickly, it’s best to use the <a class="reference internal" href="#sam.CauseEffectData" title="sam.CauseEffectData"><code class="xref py py-class docutils literal notranslate"><span class="pre">sam.CauseEffectData</span></code></a> class, as it is easy and quick.</p>
 <dl class="py class" id="module-sam">
-<dt class="sig sig-object py" id="sam.DoseResponseSeries">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sam.</span></span><span class="sig-name descname"><span class="pre">DoseResponseSeries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">concentration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">survival_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sam.DoseResponseSeries" title="Link to this definition">¶</a></dt>
-<dd><p>Represents a dose-response data series for use in <cite>sam.dose_response_fit</cite>.</p>
-<p>This class holds concentration and survival rate data for dose-response modeling,
+<dt class="sig sig-object py" id="sam.CauseEffectData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sam.</span></span><span class="sig-name descname"><span class="pre">CauseEffectData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">concentration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">survival_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sam.CauseEffectData" title="Link to this definition">¶</a></dt>
+<dd><p>Represents a concentration-response data series for use in <cite>sam.concentration_response_fit</cite>.</p>
+<p>This class holds concentration and survival rate data for concentration-response modeling,
 ensuring that input data meets specific requirements essential for accurate modeling.
 The <cite>concentration</cite> values must be a sorted, unique, and non-negative sequence starting
 with a control value of 0, and both <cite>concentration</cite> and <cite>survival_rate</cite> arrays must be
@@ -290,8 +300,8 @@ optional metadata for internal reference.</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<p>Create a dose-response series for use in the SAM model:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">series</span> <span class="o">=</span> <span class="n">DoseResponseSeries</span><span class="p">(</span>
+<p>Create a concentration-response series for use in the SAM model:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">series</span> <span class="o">=</span> <span class="n">CauseEffectData</span><span class="p">(</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="n">concentration</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="n">survival_rate</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">85</span><span class="p">],</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="n">name</span><span class="o">=</span><span class="s2">"Example Data"</span>
@@ -299,24 +309,69 @@ optional metadata for internal reference.</p>
 </pre></div>
 </div>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="sam.DoseResponseSeries.concentration">
-<span class="sig-name descname"><span class="pre">concentration</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></em><a class="headerlink" href="#sam.DoseResponseSeries.concentration" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="sam.CauseEffectData.concentration">
+<span class="sig-name descname"><span class="pre">concentration</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></em><a class="headerlink" href="#sam.CauseEffectData.concentration" title="Link to this definition">¶</a></dt>
 <dd><p>A non-negative, sorted array of unique concentration values (first value must be the control, i.e., 0).</p>
 </dd></dl>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="sam.DoseResponseSeries.survival_rate">
-<span class="sig-name descname"><span class="pre">survival_rate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></em><a class="headerlink" href="#sam.DoseResponseSeries.survival_rate" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="sam.CauseEffectData.survival_rate">
+<span class="sig-name descname"><span class="pre">survival_rate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></em><a class="headerlink" href="#sam.CauseEffectData.survival_rate" title="Link to this definition">¶</a></dt>
 <dd><p>Array of survival rates corresponding to each concentration value, with matching length to <cite>concentration</cite>.</p>
 </dd></dl>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="sam.DoseResponseSeries.name">
-<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#sam.DoseResponseSeries.name" title="Link to this definition">¶</a></dt>
-<dd><p>Label for the dose-response series, used primarily in plotting.</p>
+<dt class="sig sig-object py" id="sam.CauseEffectData.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#sam.CauseEffectData.name" title="Link to this definition">¶</a></dt>
+<dd><p>Label for the concentration-response series, used primarily in plotting.</p>
 </dd></dl>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="sam.DoseResponseSeries.meta">
-<span class="sig-name descname"><span class="pre">meta</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">ExperimentMetaData</span></code><span class="pre">]</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#sam.DoseResponseSeries.meta" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="sam.CauseEffectData.meta">
+<span class="sig-name descname"><span class="pre">meta</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">ExperimentMetaData</span></code><span class="pre">]</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#sam.CauseEffectData.meta" title="Link to this definition">¶</a></dt>
 <dd><p>Additional experimental metadata, used mainly for internal purposes.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sam.CauseEffectData.from_dict">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kvs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">infer_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sam.CauseEffectData.from_dict" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">A</span></code>, bound= DataClassJsonMixin)</span></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sam.CauseEffectData.from_json">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parse_float</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parse_int</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parse_constant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">infer_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sam.CauseEffectData.from_json" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">A</span></code>, bound= DataClassJsonMixin)</span></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sam.CauseEffectData.schema">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">infer_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">many</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dump_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unknown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sam.CauseEffectData.schema" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">SchemaF</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>(<code class="docutils literal notranslate"><span class="pre">A</span></code>, bound= DataClassJsonMixin)]</span></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sam.CauseEffectData.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encode_json</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sam.CauseEffectData.to_dict" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]]</span></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sam.CauseEffectData.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipkeys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_ascii</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_circular</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_nan</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sam.CauseEffectData.to_json" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+</dl>
 </dd></dl>
 </dd></dl>
 <section id="our-data-format">
@@ -404,12 +459,12 @@ the main and additional stress series based on the expected data template.</p>
 </div>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sam.ExperimentData.main_series">
-<span class="sig-name descname"><span class="pre">main_series</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#sam.DoseResponseSeries" title="sam.data_formats.DoseResponseSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">DoseResponseSeries</span></code></a></em><a class="headerlink" href="#sam.ExperimentData.main_series" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">main_series</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#sam.CauseEffectData" title="sam.data_formats.CauseEffectData"><code class="xref py py-class docutils literal notranslate"><span class="pre">CauseEffectData</span></code></a></em><a class="headerlink" href="#sam.ExperimentData.main_series" title="Link to this definition">¶</a></dt>
 <dd><p>Dose-response data for the control series.</p>
 </dd></dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sam.ExperimentData.additional_stress">
-<span class="sig-name descname"><span class="pre">additional_stress</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <a class="reference internal" href="#sam.DoseResponseSeries" title="sam.data_formats.DoseResponseSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">DoseResponseSeries</span></code></a><span class="pre">]</span></em><a class="headerlink" href="#sam.ExperimentData.additional_stress" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">additional_stress</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <a class="reference internal" href="#sam.CauseEffectData" title="sam.data_formats.CauseEffectData"><code class="xref py py-class docutils literal notranslate"><span class="pre">CauseEffectData</span></code></a><span class="pre">]</span></em><a class="headerlink" href="#sam.ExperimentData.additional_stress" title="Link to this definition">¶</a></dt>
 <dd><p>Dictionary of additional stressor series, with stressor names as keys.</p>
 </dd></dl>
 <dl class="py attribute">
@@ -463,12 +518,12 @@ the main and additional stress series based on the expected data template.</p>
             </a>
           
           
-            <a href="DoseResponseFits.html" title="Dose-Response Fitting"
+            <a href="sam.html" title="Stress Addition Model (SAM)"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> "Next" </span> Dose-Response Fitting </span>
+                class="md-footer-nav__direction"> "Next" </span> Stress Addition Model (SAM) </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
