@@ -1,10 +1,10 @@
 Data Handling
 =============
 
-For trying out your own data quickly, it's best to use the :class:`sam.DoseResponseSeries` class, as it is easy and quick.
+For trying out your own data quickly, it's best to use the :class:`sam.CauseEffectData` class, as it is easy and quick.
 
 .. automodule:: sam
-   :members: DoseResponseSeries,
+   :members: CauseEffectData,
    :undoc-members:
 
 Our Data Format

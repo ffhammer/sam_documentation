@@ -8,8 +8,9 @@ Welcome to the documentation for the SAM project. Below are the main sections:
    :caption: Contents
 
    DataHandling
-   DoseResponseFits
+   ConcentrationResponseFits
    sam
+   sys_adjusted
    utils
 
 Installation
