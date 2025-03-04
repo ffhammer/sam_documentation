@@ -17,7 +17,7 @@ Below are the primary classes and functions used for concentration-response fitt
 Concentration Response Fit Settings
 --------------------------
 
-.. autoclass:: sam.CRF_SETTINGS
+.. autoclass:: sam.CRF_Settings
    :members:
    :undoc-members:
    :show-inheritance:
