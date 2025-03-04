@@ -10,6 +10,7 @@ Welcome to the documentation for the SAM project. Below are the main sections:
    DataHandling
    ConcentrationResponseFits
    sam
+   ec_x_sys
 
 Installation
 ------------
