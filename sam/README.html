@@ -213,9 +213,11 @@
   <ul class="md-nav__list" data-md-scrollfix="">
         <li class="md-nav__item"><a href="#sam-readme--page-root" class="md-nav__link">SAM - Stress Addition Model</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#website-and-documentation" class="md-nav__link">Website and Documentation</a>
-        </li>
         <li class="md-nav__item"><a href="#install" class="md-nav__link">Install</a>
+        </li>
+        <li class="md-nav__item"><a href="#dataset-and-publication" class="md-nav__link">Dataset and Publication</a>
+        </li>
+        <li class="md-nav__item"><a href="#detailed-documentation" class="md-nav__link">Detailed Documentation</a>
         </li>
         <li class="md-nav__item"><a href="#citation" class="md-nav__link">Citation</a>
         </li>
@@ -239,17 +241,26 @@
             
   <section id="sam-stress-addition-model">
 <h1 id="sam-readme--page-root">SAM - Stress Addition Model<a class="headerlink" href="#sam-readme--page-root" title="Link to this heading">¶</a></h1>
-<p>This is a Python reimplementation of the Stress Addition Model (SAM) from the research paper “Predicting the synergy of multiple stress effects” by Matthias Liess, Kaarina Foit, Saskia Knillmann, Ralf B. Schäfer, and Hans-Dieter Liess.</p>
-<section id="website-and-documentation">
-<h2 id="website-and-documentation">Website and Documentation<a class="headerlink" href="#website-and-documentation" title="Link to this heading">¶</a></h2>
-<p>https://mockawolke.github.io/sam/</p>
-<p>https://mockawolke.github.io/sam_documentation/</p>
-</section>
+<p>SAM is a Python reimplementation of the Stress Addition Model from the paper “<a class="reference external" href="https://www.nature.com/articles/srep32965">Predicting the synergy of multiple stress effects</a>” by Liess et al. It follows the methodology from <a class="reference external" href="https://www.systemecology.de/indicate/">Systemecology</a> and achieves nearly identical results across diverse datasets.</p>
+<p>We also reimplemented the <a class="reference external" href="https://doi.org/10.1038/s41598-019-51645-4">$EC_{x-\text{sys}}$ model</a> from Liess et al. (2019) as <code class="docutils literal notranslate"><span class="pre">sam.ecxsys</span></code>. This package lets you predict, visualize, and save outcomes for both SAM and EC$_{x-\text{sys}}$, even with minimal Python experience.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">examples/sam.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">examples/ec_x-SyS.py</span></code></p></li>
+</ul>
 <section id="install">
 <h2 id="install">Install<a class="headerlink" href="#install" title="Link to this heading">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/mockaWolke/sam.git
 </pre></div>
 </div>
+</section>
+<section id="dataset-and-publication">
+<h2 id="dataset-and-publication">Dataset and Publication<a class="headerlink" href="#dataset-and-publication" title="Link to this heading">¶</a></h2>
+<p>This repository is under active development for an upcoming publication. The <code class="docutils literal notranslate"><span class="pre">data</span></code> folder contains collated datasets on the effects of multiple stressors. More details will be available on our publication website: <a class="reference external" href="https://ffhamer.github.io/sam/">SAM Publication</a>.</p>
+</section>
+<section id="detailed-documentation">
+<h2 id="detailed-documentation">Detailed Documentation<a class="headerlink" href="#detailed-documentation" title="Link to this heading">¶</a></h2>
+<p>Further documentation—including experimental setups and dataset handling—is available at: <a class="reference external" href="https://ffhamer.github.io/sam_documentation/">SAM Documentation</a>.</p>
 </section>
 <section id="citation">
 <h2 id="citation">Citation<a class="headerlink" href="#citation" title="Link to this heading">¶</a></h2>
@@ -265,18 +276,8 @@
 </section>
 <section id="copyright-and-license">
 <h2 id="copyright-and-license">Copyright and License<a class="headerlink" href="#copyright-and-license" title="Link to this heading">¶</a></h2>
-<p>Copyright (c) 2020,<br/>
-Helmholtz-Zentrum fuer Umweltforschung GmbH - UFZ.<br/>
-All rights reserved.</p>
-<p>The code is a property of:</p>
-<p>Helmholtz-Zentrum fuer Umweltforschung GmbH - UFZ<br/>
-Registered Office: Leipzig<br/>
-Registration Office: Amtsgericht Leipzig<br/>
-Trade Register: Nr. B 4703<br/>
-Chairman of the Supervisory Board: MinDirig’in Oda Keppler<br/>
-Scientific Director: Prof. Dr. Georg Teutsch<br/>
-Administrative Director: Dr. Sabine König</p>
-<p>SAM (Stress Addition Model) is free software: you can redistribute it and/or modify<br/>
+<p>Copyright (C) 2025 Helmholtz-Zentrum fuer Umweltforschung GmbH - UFZ</p>
+<p>This program is free software: you can redistribute it and/or modify<br/>
 it under the terms of the GNU General Public License as published by<br/>
 the Free Software Foundation, either version 3 of the License, or<br/>
 (at your option) any later version.</p>
@@ -286,6 +287,15 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the<br/>
 GNU General Public License for more details.</p>
 <p>You should have received a copy of the GNU General Public License<br/>
 along with this program. If not, see <a class="reference external" href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>.</p>
+<!-- 
+## Academic Citation Requirement:
+If you use this software in academic work, research, or publications,  
+you must cite the following reference:  
+
+[Your Name], "[Title of Your Work]," [Journal/Conference], [Year], [DOI or URL].  
+
+Failure to provide appropriate citation in academic works constitutes  
+a violation of this licensing agreement.   -->
 </section>
 </section>
 
@@ -312,7 +322,7 @@ along with this program. If not, see <a class="reference external" href="https:/
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

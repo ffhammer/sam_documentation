@@ -46,7 +46,7 @@
   
   
   
-    <title>Impact of Additional Stress on Lethal Concentrations (LCs) &#8212; SAM 30.10.2024 documentation</title>
+    <title>ECx-SyS: Enhanced System Stress Predictions &#8212; SAM 30.10.2024 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=83e35b93" />
     <link rel="stylesheet" type="text/css" href="../../../_static/material.css?v=79c92029" />
     <script src="../../../_static/documentation_options.js?v=8ceb233d"></script>
@@ -72,7 +72,7 @@
   <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
   <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
   <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-  <a href="#sam/docs/templates/lc_increase_with_stress" tabindex="1" class="md-skip"> Skip to content </a>
+  <a href="#sam/docs/templates/ecx_sys" tabindex="1" class="md-skip"> Skip to content </a>
   <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
@@ -90,7 +90,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">SAM 30.10.2024 documentation</span>
-          <span class="md-header-nav__topic"> Impact of Additional Stress on Lethal Concentrations (LCs) </span>
+          <span class="md-header-nav__topic"> ECx-SyS: Enhanced System Stress Predictions </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -209,9 +209,20 @@
               <div class="md-sidebar__inner">
                 
 <nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">"Contents"</label>
   <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#sam-docs-templates-ecx-sys--page-root" class="md-nav__link">ECx-SyS: Enhanced System Stress Predictions</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#experiment-title" class="md-nav__link">{{ experiment.title }}</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#series-name" class="md-nav__link">{{ series.name }}</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
     
-<li class="md-nav__item"><a class="md-nav__extra_link" href="../../../_sources/sam/docs/templates/lc_increase_with_stress.md.txt">Show Source</a> </li>
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../../../_sources/sam/docs/templates/ecx_sys.md.txt">Show Source</a> </li>
 
 <li id="searchbox" class="md-nav__item"></li>
 
@@ -224,13 +235,24 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  <section id="impact-of-additional-stress-on-lethal-concentrations-lcs">
-<h1 id="sam-docs-templates-lc-increase-with-stress--page-root">Impact of Additional Stress on Lethal Concentrations (LCs)<a class="headerlink" href="#sam-docs-templates-lc-increase-with-stress--page-root" title="Link to this heading">¶</a></h1>
-<p>This page demonstrates how lethal concentrations (LCs) increase with added stress across different dose-response curves.</p>
-<p>The first graphic illustrates, for each dose-response curve in our dataset, the increase in LC10 (left) and LC50 (right) values in response to additional stress as predicted by our SAM Model.</p>
-<iframe height="600px" src="https://github.com/MockaWolke/sam/raw/master/docs/imgs/increase_in_lcs/different_curves.html" style="max-width: 1200px;" width="100%"></iframe>
-<p>The second graphic provides a comparison of the observed (blue) and SAM-predicted (green) increases in LCs for all data samples subjected to additional stress.</p>
-<iframe height="600px" src="https://github.com/MockaWolke/sam/raw/master/docs/imgs/increase_in_lcs/lcs.html" style="max-width: 1200px;" width="100%"></iframe>
+  <section id="ecx-sys-enhanced-system-stress-predictions">
+<h1 id="sam-docs-templates-ecx-sys--page-root">ECx-SyS: Enhanced System Stress Predictions<a class="headerlink" href="#sam-docs-templates-ecx-sys--page-root" title="Link to this heading">¶</a></h1>
+<p>This page provides a detailed showcase of the ECx-SyS model for experiments with two strong co-stressors. The ECx-SyS model adjusts the predictions of the SAM model to account for system stress.</p>
+<p>For further information or citations, see:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://doi.org/10.1038/s41598-019-51645-4">Liess, M., Henz, S. &amp; Knillmann, S. Predicting low-concentration effects of pesticides. Sci Rep 9, 15248 (2019).</a></p></li>
+</ul>
+<p>{% for experiment in experiments %}</p>
+<section id="experiment-title">
+<h2 id="experiment-title">{{ experiment.title }}<a class="headerlink" href="#experiment-title" title="Link to this heading">¶</a></h2>
+<p>{% for series in experiment.series %}</p>
+<section id="series-name">
+<h3 id="series-name">{{ series.name }}<a class="headerlink" href="#series-name" title="Link to this heading">¶</a></h3>
+<p>![{{ series.name }}](imgs/{{ series.img_path }})</p>
+<p>{% endfor %}
+{% endfor %}</p>
+</section>
+</section>
 </section>
 
 

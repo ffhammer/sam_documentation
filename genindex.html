@@ -234,6 +234,7 @@
  | <a href="#G"><strong>G</strong></a>
  | <a href="#H"><strong>H</strong></a>
  | <a href="#I"><strong>I</strong></a>
+ | <a href="#K"><strong>K</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
@@ -248,11 +249,7 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="DataHandling.html#sam.ExperimentData.additional_stress">additional_stress (sam.ExperimentData attribute)</a>
-
-      <ul>
-        <li><a href="sys_adjusted.html#sam.SysAdjustedSamPrediction.additional_stress">(sam.SysAdjustedSamPrediction attribute)</a>
 </li>
-      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="sam.html#sam.SAMPrediction.assumed_additional_stress">assumed_additional_stress (sam.SAMPrediction attribute)</a>
@@ -281,14 +278,18 @@
 </li>
       <li><a href="sam.html#sam.SAMPrediction.co_stressor">co_stressor (sam.SAMPrediction attribute)</a>
 </li>
+      <li><a href="sam.html#sam.SAMPrediction.compute_sam_lc">compute_sam_lc() (sam.SAMPrediction method)</a>
+</li>
+      <li><a href="sam.html#sam.SAMPrediction.concentratation_addition_prediction">concentratation_addition_prediction (sam.SAMPrediction attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="DataHandling.html#sam.CauseEffectData.concentration">concentration (sam.CauseEffectData attribute)</a>
 
       <ul>
         <li><a href="%20ConcentrationResponseFits.html#sam.ConcentrationResponsePrediction.concentration">(sam.ConcentrationResponsePrediction attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="%20ConcentrationResponseFits.html#sam.concentration_response_fit">concentration_response_fit() (in module sam)</a>
 </li>
       <li><a href="%20ConcentrationResponseFits.html#sam.ConcentrationResponsePrediction">ConcentrationResponsePrediction (class in sam)</a>
@@ -303,6 +304,12 @@
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sam.html#sam.SAM_Settings.e_param_fac">e_param_fac (sam.SAM_Settings attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sam.html#sam.SAMPrediction.effect_addition_prediction">effect_addition_prediction (sam.SAMPrediction attribute)</a>
+</li>
       <li><a href="DataHandling.html#sam.ExperimentData">ExperimentData (class in sam)</a>
 </li>
   </ul></td>
@@ -322,8 +329,6 @@
 </li>
         <li><a href="sam.html#sam.SAMPrediction.from_dict">(sam.SAMPrediction class method)</a>
 </li>
-        <li><a href="sys_adjusted.html#sam.SysAdjustedSamPrediction.from_dict">(sam.SysAdjustedSamPrediction class method)</a>
-</li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -336,8 +341,6 @@
 </li>
         <li><a href="sam.html#sam.SAMPrediction.from_json">(sam.SAMPrediction class method)</a>
 </li>
-        <li><a href="sys_adjusted.html#sam.SysAdjustedSamPrediction.from_json">(sam.SysAdjustedSamPrediction class method)</a>
-</li>
       </ul></li>
       <li><a href="DataHandling.html#sam.ExperimentData.from_xlsx">from_xlsx() (sam.ExperimentData class method)</a>
 </li>
@@ -349,9 +352,13 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="%20ConcentrationResponseFits.html#sam.ConcentrationResponsePrediction.general_stress">general_stress (sam.ConcentrationResponsePrediction attribute)</a>
 </li>
+      <li><a href="sam.html#sam.SAMPrediction.generate">generate() (sam.SAMPrediction class method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="sam.html#sam.generate_sam_prediction">generate_sam_prediction() (in module sam)</a>
+</li>
+      <li><a href="sam.html#sam.SAMPrediction.get_lethal_concentrations">get_lethal_concentrations() (sam.SAMPrediction method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -360,11 +367,7 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="DataHandling.html#sam.ExperimentData.hormesis_index">hormesis_index (sam.ExperimentData property)</a>
-
-      <ul>
-        <li><a href="sys_adjusted.html#sam.SysAdjustedSamPrediction.hormesis_index">(sam.SysAdjustedSamPrediction attribute)</a>
 </li>
-      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -372,6 +375,14 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="%20ConcentrationResponseFits.html#sam.ConcentrationResponsePrediction.inputs">inputs (sam.ConcentrationResponsePrediction attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="K">K</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sam.html#sam.SAM_Settings.keep_co_stressor_f_parameter_free">keep_co_stressor_f_parameter_free (sam.SAM_Settings attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -390,8 +401,6 @@
       <ul>
         <li><a href="sam.html#sam.SAMPrediction.load_from_file">(sam.SAMPrediction class method)</a>
 </li>
-        <li><a href="sys_adjusted.html#sam.SysAdjustedSamPrediction.load_from_file">(sam.SysAdjustedSamPrediction class method)</a>
-</li>
       </ul></li>
   </ul></td>
 </tr></table>
@@ -400,8 +409,6 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="DataHandling.html#sam.ExperimentData.main_series">main_series (sam.ExperimentData attribute)</a>
-</li>
-      <li><a href="sam.html#sam.SAM_Settings.max_control_survival">max_control_survival (sam.SAM_Settings attribute)</a>
 </li>
       <li><a href="sam.html#sam.SAMPrediction.max_survival">max_survival (sam.SAMPrediction attribute)</a>
 </li>
@@ -428,11 +435,13 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="DataHandling.html#sam.CauseEffectData.name">name (sam.CauseEffectData attribute)</a>
+      <li><a href="sam.html#sam.SAMPrediction.new_model">new_model (sam.SAMPrediction attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="sam.html#sam.SAM_Settings.normalize_survival_for_stress_conversion">normalize_survival_for_stress_conversion (sam.SAM_Settings attribute)</a>
+</li>
+      <li><a href="sam.html#sam.SAMPrediction.normalize_survival_for_stress_conversion_factor">normalize_survival_for_stress_conversion_factor (sam.SAMPrediction attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -443,35 +452,25 @@
       <li><a href="%20ConcentrationResponseFits.html#sam.ConcentrationResponsePrediction.optim_param">optim_param (sam.ConcentrationResponsePrediction attribute)</a>
 </li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="sys_adjusted.html#sam.SysAdjustedSamPrediction.original_fit">original_fit (sam.SysAdjustedSamPrediction attribute)</a>
-</li>
-      <li><a href="sys_adjusted.html#sam.SysAdjustedSamPrediction.original_series">original_series (sam.SysAdjustedSamPrediction attribute)</a>
-</li>
-  </ul></td>
 </tr></table>
 
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="sam.html#sam.SAMPrediction.plot">plot() (sam.SAMPrediction method)</a>
-
-      <ul>
-        <li><a href="sys_adjusted.html#sam.SysAdjustedSamPrediction.plot">(sam.SysAdjustedSamPrediction method)</a>
 </li>
-      </ul></li>
-      <li><a href="sam.html#sam.SAMPrediction.predicted_general_stress">predicted_general_stress (sam.SAMPrediction attribute)</a>
+      <li><a href="sam.html#sam.SAMPrediction.predict">predict() (sam.SAMPrediction method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sam.html#sam.SAMPrediction.predicted_general_stress">predicted_general_stress (sam.SAMPrediction attribute)</a>
+</li>
       <li><a href="%20ConcentrationResponseFits.html#sam.ConcentrationResponsePrediction.predicted_survival">predicted_survival (sam.ConcentrationResponsePrediction attribute)</a>
 
       <ul>
         <li><a href="sam.html#sam.SAMPrediction.predicted_survival">(sam.SAMPrediction attribute)</a>
 </li>
       </ul></li>
-      <li><a href="sys_adjusted.html#sam.SysAdjustedSamPrediction.predicted_system_stress">predicted_system_stress (sam.SysAdjustedSamPrediction attribute)</a>
-</li>
   </ul></td>
 </tr></table>
 
@@ -483,8 +482,6 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="%20ConcentrationResponseFits.html#sam.ConcentrationResponsePrediction.regress_surv">regress_surv (sam.ConcentrationResponsePrediction attribute)</a>
-</li>
-      <li><a href="sys_adjusted.html#sam.SysAdjustedSamPrediction.result">result (sam.SysAdjustedSamPrediction attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -508,8 +505,6 @@
       <ul>
         <li><a href="sam.html#sam.SAMPrediction.save_to_file">(sam.SAMPrediction method)</a>
 </li>
-        <li><a href="sys_adjusted.html#sam.SysAdjustedSamPrediction.save_to_file">(sam.SysAdjustedSamPrediction method)</a>
-</li>
       </ul></li>
       <li><a href="DataHandling.html#sam.CauseEffectData.schema">schema() (sam.CauseEffectData class method)</a>
 
@@ -520,24 +515,16 @@
 </li>
         <li><a href="sam.html#sam.SAMPrediction.schema">(sam.SAMPrediction class method)</a>
 </li>
-        <li><a href="sys_adjusted.html#sam.SysAdjustedSamPrediction.schema">(sam.SysAdjustedSamPrediction class method)</a>
-</li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sam.html#sam.SAMPrediction.settings">settings (sam.SAMPrediction attribute)</a>
+</li>
       <li><a href="sam.html#sam.SAM_Settings.stress_form">stress_form (sam.SAM_Settings attribute)</a>
-</li>
-      <li><a href="sam.html#sam.SAM_Settings.stress_intercept_in_survival">stress_intercept_in_survival (sam.SAM_Settings attribute)</a>
-</li>
-      <li><a href="utils.html#sam.stress_to_survival">stress_to_survival() (in module sam)</a>
 </li>
       <li><a href="%20ConcentrationResponseFits.html#sam.ConcentrationResponsePrediction.survival">survival (sam.ConcentrationResponsePrediction attribute)</a>
 </li>
       <li><a href="DataHandling.html#sam.CauseEffectData.survival_rate">survival_rate (sam.CauseEffectData attribute)</a>
-</li>
-      <li><a href="utils.html#sam.survival_to_stress">survival_to_stress() (in module sam)</a>
-</li>
-      <li><a href="sys_adjusted.html#sam.SysAdjustedSamPrediction">SysAdjustedSamPrediction (class in sam)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -554,8 +541,6 @@
 </li>
         <li><a href="sam.html#sam.SAMPrediction.to_dict">(sam.SAMPrediction method)</a>
 </li>
-        <li><a href="sys_adjusted.html#sam.SysAdjustedSamPrediction.to_dict">(sam.SysAdjustedSamPrediction method)</a>
-</li>
       </ul></li>
       <li><a href="DataHandling.html#sam.CauseEffectData.to_json">to_json() (sam.CauseEffectData method)</a>
 
@@ -565,8 +550,6 @@
         <li><a href="sam.html#sam.SAM_Settings.to_json">(sam.SAM_Settings method)</a>
 </li>
         <li><a href="sam.html#sam.SAMPrediction.to_json">(sam.SAMPrediction method)</a>
-</li>
-        <li><a href="sys_adjusted.html#sam.SysAdjustedSamPrediction.to_json">(sam.SysAdjustedSamPrediction method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -602,7 +585,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

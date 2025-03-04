@@ -252,14 +252,9 @@
 <li class="toctree-l2"><a class="reference internal" href="sam.html#sam-prediction">SAM Prediction</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="sys_adjusted.html">System Stress Adjusted SAM</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sys_adjusted.html#generate-system-stress-adjusted-sam-prediction">Generate System Stress Adjusted SAM Prediction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sys_adjusted.html#sysadjustedsamprediction">SysAdjustedSamPrediction</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="utils.html">Utils</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="utils.html#stress-to-survival">Stress to Survival</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html#survival-to-stress">Survival to Stress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ec_x_sys.html">ECx-SyS Prediction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ec_x_sys.html#generate-ecx-sys-prediction">Generate ECx-SyS Prediction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ec_x_sys.html#ecx-sys-prediction-output">ECx-SyS Prediction Output</a></li>
 </ul>
 </li>
 </ul>
@@ -274,33 +269,28 @@
 </section>
 <section id="example">
 <h2 id="example">Example<a class="headerlink" href="#example" title="Link to this heading">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sam</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sam</span> <span class="kn">import</span> <span class="n">generate_sam_prediction</span><span class="p">,</span> <span class="n">SAMPrediction</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="c1"># Example DoseResponseSeries data</span>
-<span class="n">control_series</span> <span class="o">=</span> <span class="n">CauseEffectData</span><span class="p">(</span>
+
+<span class="c1"># generate SAM prediction</span>
+<span class="n">prediction</span><span class="p">:</span> <span class="n">SAMPrediction</span> <span class="o">=</span> <span class="n">generate_sam_prediction</span><span class="p">(</span>
     <span class="n">concentration</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">],</span>
-    <span class="n">survival_rate</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">"Control"</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">stressor_series</span> <span class="o">=</span> <span class="n">CauseEffectData</span><span class="p">(</span>
-    <span class="n">concentration</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">],</span>
-    <span class="n">survival_rate</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">"Stressor"</span><span class="p">,</span>
-<span class="p">)</span>
-
-
-<span class="c1"># Run SAM prediction</span>
-<span class="n">prediction</span> <span class="o">=</span> <span class="n">generate_sam_prediction</span><span class="p">(</span>
-    <span class="n">control_data</span><span class="o">=</span><span class="n">control_series</span><span class="p">,</span>
-    <span class="n">co_stressor_data</span><span class="o">=</span><span class="n">stressor_series</span><span class="p">,</span>
+    <span class="n">control_survival</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+    <span class="n">co_stressor_survival</span><span class="o">=</span><span class="p">[</span><span class="mi">97</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
     <span class="n">max_survival</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
 <span class="p">)</span>
 
+<span class="c1"># plot</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">prediction</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">"SAM Prediction Example"</span><span class="p">,</span> <span class="n">with_lcs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inlcude_control_addition</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
 
-<span class="c1"># Plot results</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">prediction</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"SAM Prediction Example"</span><span class="p">,</span> <span class="n">with_lcs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># saving and loading</span>
+<span class="n">prediction</span><span class="o">.</span><span class="n">save_to_file</span><span class="p">(</span><span class="s2">"my_sam_prediction"</span><span class="p">)</span>
+
+<span class="n">loaded_prediction</span><span class="p">:</span> <span class="n">SAMPrediction</span> <span class="o">=</span> <span class="n">SAMPrediction</span><span class="o">.</span><span class="n">load_from_file</span><span class="p">(</span><span class="s2">"my_sam_prediction"</span><span class="p">)</span>
+
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -342,7 +332,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>
