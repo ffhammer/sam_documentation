@@ -1,3 +1,3 @@
 # SAM Documentation
 
-Documentation for https://github.com/mockaWolke/sam
+Documentation for https://github.com/ffhammer/sam
